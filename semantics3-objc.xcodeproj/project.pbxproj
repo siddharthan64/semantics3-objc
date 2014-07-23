@@ -77,7 +77,6 @@
 		6DD1022C1830314700CEBF62 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD102051830314700CEBF62 /* OATokenManager.m */; };
 		6DD1022D1830314700CEBF62 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 6DD102071830314700CEBF62 /* README */; };
 		6DD1022F1830316200CEBF62 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD1022E1830316200CEBF62 /* Security.framework */; };
-		6DD102311830316800CEBF62 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD102301830316800CEBF62 /* libxml2.dylib */; };
 		6DD102501830547100CEBF62 /* NSMutableURLRequest+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD101DF1830314700CEBF62 /* NSMutableURLRequest+Parameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DD102511830547100CEBF62 /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD101E11830314700CEBF62 /* NSString+URLEncoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DD102521830547100CEBF62 /* NSURL+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD101E31830314700CEBF62 /* NSURL+Base.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -197,7 +196,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD102311830316800CEBF62 /* libxml2.dylib in Frameworks */,
 				6DD1022F1830316200CEBF62 /* Security.framework in Frameworks */,
 				6DD101A31830311D00CEBF62 /* Foundation.framework in Frameworks */,
 			);
@@ -603,7 +601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;
@@ -636,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;

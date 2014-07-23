@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D167BDC197FA54500C52F17 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D167BDB197FA54500C52F17 /* libxml2.dylib */; };
+		6D4A1E75197FA8C4000DFDAE /* libsemantics3-objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4A1E72197FA8A7000DFDAE /* libsemantics3-objc.a */; };
 		6DD1027B1830583400CEBF62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD1027A1830583400CEBF62 /* Foundation.framework */; };
 		6DD1027D1830583400CEBF62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD1027C1830583400CEBF62 /* CoreGraphics.framework */; };
 		6DD1027F1830583400CEBF62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD1027E1830583400CEBF62 /* UIKit.framework */; };
@@ -21,10 +23,23 @@
 		6DD1029C1830583400CEBF62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD1027E1830583400CEBF62 /* UIKit.framework */; };
 		6DD102A41830583400CEBF62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DD102A21830583400CEBF62 /* InfoPlist.strings */; };
 		6DD102A61830583400CEBF62 /* Semantics3_iOS_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD102A51830583400CEBF62 /* Semantics3_iOS_DemoTests.m */; };
-		6DD102B91830589400CEBF62 /* libsemantics3-objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD102B61830588800CEBF62 /* libsemantics3-objc.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6D4A1E71197FA8A7000DFDAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D4A1E6B197FA8A7000DFDAE /* semantics3-objc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6DD1019F1830311D00CEBF62;
+			remoteInfo = "semantics3-objc";
+		};
+		6D4A1E73197FA8A7000DFDAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D4A1E6B197FA8A7000DFDAE /* semantics3-objc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6DD101AF1830311D00CEBF62;
+			remoteInfo = "semantics3-objcTests";
+		};
 		6DD1029D1830583400CEBF62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6DD1026F1830583400CEBF62 /* Project object */;
@@ -32,30 +47,11 @@
 			remoteGlobalIDString = 6DD102761830583400CEBF62;
 			remoteInfo = "Semantics3-iOS-Demo";
 		};
-		6DD102B51830588800CEBF62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DD102AF1830588700CEBF62 /* semantics3-objc.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6DD1019F1830311D00CEBF62;
-			remoteInfo = "semantics3-objc";
-		};
-		6DD102B71830588800CEBF62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DD102AF1830588700CEBF62 /* semantics3-objc.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6DD101AF1830311D00CEBF62;
-			remoteInfo = "semantics3-objcTests";
-		};
-		6DD102BA18305A4B00CEBF62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6DD102AF1830588700CEBF62 /* semantics3-objc.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6DD1019E1830311D00CEBF62;
-			remoteInfo = "semantics3-objc";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D167BDB197FA54500C52F17 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		6D4A1E6B197FA8A7000DFDAE /* semantics3-objc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "semantics3-objc.xcodeproj"; path = "../semantics3-objc.xcodeproj"; sourceTree = "<group>"; };
 		6DD102771830583400CEBF62 /* Semantics3-iOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Semantics3-iOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD1027A1830583400CEBF62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DD1027C1830583400CEBF62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,7 +71,6 @@
 		6DD102A11830583400CEBF62 /* Semantics3-iOS-DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Semantics3-iOS-DemoTests-Info.plist"; sourceTree = "<group>"; };
 		6DD102A31830583400CEBF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DD102A51830583400CEBF62 /* Semantics3_iOS_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Semantics3_iOS_DemoTests.m; sourceTree = "<group>"; };
-		6DD102AF1830588700CEBF62 /* semantics3-objc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "semantics3-objc.xcodeproj"; path = "../semantics3-objc/semantics3-objc.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD102B91830589400CEBF62 /* libsemantics3-objc.a in Frameworks */,
+				6D4A1E75197FA8C4000DFDAE /* libsemantics3-objc.a in Frameworks */,
+				6D167BDC197FA54500C52F17 /* libxml2.dylib in Frameworks */,
 				6DD1027D1830583400CEBF62 /* CoreGraphics.framework in Frameworks */,
 				6DD1027F1830583400CEBF62 /* UIKit.framework in Frameworks */,
 				6DD1027B1830583400CEBF62 /* Foundation.framework in Frameworks */,
@@ -103,10 +99,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D4A1E6C197FA8A7000DFDAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D4A1E72197FA8A7000DFDAE /* libsemantics3-objc.a */,
+				6D4A1E74197FA8A7000DFDAE /* semantics3-objcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6DD1026E1830583400CEBF62 = {
 			isa = PBXGroup;
 			children = (
-				6DD102AF1830588700CEBF62 /* semantics3-objc.xcodeproj */,
+				6D4A1E6B197FA8A7000DFDAE /* semantics3-objc.xcodeproj */,
 				6DD102801830583400CEBF62 /* Semantics3-iOS-Demo */,
 				6DD1029F1830583400CEBF62 /* Semantics3-iOS-DemoTests */,
 				6DD102791830583400CEBF62 /* Frameworks */,
@@ -126,6 +131,7 @@
 		6DD102791830583400CEBF62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D167BDB197FA54500C52F17 /* libxml2.dylib */,
 				6DD1027A1830583400CEBF62 /* Foundation.framework */,
 				6DD1027C1830583400CEBF62 /* CoreGraphics.framework */,
 				6DD1027E1830583400CEBF62 /* UIKit.framework */,
@@ -177,15 +183,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DD102B01830588700CEBF62 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6DD102B61830588800CEBF62 /* libsemantics3-objc.a */,
-				6DD102B81830588800CEBF62 /* semantics3-objcTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,7 +197,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6DD102BB18305A4B00CEBF62 /* PBXTargetDependency */,
 			);
 			name = "Semantics3-iOS-Demo";
 			productName = "Semantics3-iOS-Demo";
@@ -231,7 +227,7 @@
 		6DD1026F1830583400CEBF62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Semantics3;
 				TargetAttributes = {
 					6DD102971830583400CEBF62 = {
@@ -252,8 +248,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 6DD102B01830588700CEBF62 /* Products */;
-					ProjectRef = 6DD102AF1830588700CEBF62 /* semantics3-objc.xcodeproj */;
+					ProductGroup = 6D4A1E6C197FA8A7000DFDAE /* Products */;
+					ProjectRef = 6D4A1E6B197FA8A7000DFDAE /* semantics3-objc.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -265,18 +261,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6DD102B61830588800CEBF62 /* libsemantics3-objc.a */ = {
+		6D4A1E72197FA8A7000DFDAE /* libsemantics3-objc.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libsemantics3-objc.a";
-			remoteRef = 6DD102B51830588800CEBF62 /* PBXContainerItemProxy */;
+			remoteRef = 6D4A1E71197FA8A7000DFDAE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6DD102B81830588800CEBF62 /* semantics3-objcTests.xctest */ = {
+		6D4A1E74197FA8A7000DFDAE /* semantics3-objcTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "semantics3-objcTests.xctest";
-			remoteRef = 6DD102B71830588800CEBF62 /* PBXContainerItemProxy */;
+			remoteRef = 6D4A1E73197FA8A7000DFDAE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -329,11 +325,6 @@
 			target = 6DD102761830583400CEBF62 /* Semantics3-iOS-Demo */;
 			targetProxy = 6DD1029D1830583400CEBF62 /* PBXContainerItemProxy */;
 		};
-		6DD102BB18305A4B00CEBF62 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "semantics3-objc";
-			targetProxy = 6DD102BA18305A4B00CEBF62 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -368,7 +359,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -407,7 +397,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -471,7 +460,6 @@
 		6DD102AD1830583400CEBF62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Semantics3-iOS-Demo.app/Semantics3-iOS-Demo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -494,7 +482,6 @@
 		6DD102AE1830583400CEBF62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Semantics3-iOS-Demo.app/Semantics3-iOS-Demo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

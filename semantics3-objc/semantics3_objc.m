@@ -19,10 +19,6 @@
     
     
     if ( self = [super init] ) {
-        
-        
-        
-        
         if(api_Key == nil){
             UIAlertView *noAPIKeyAlert = [[UIAlertView alloc] initWithTitle:@"API Credentials Missing" message:@"You did not supply an apiKey. Please sign up  to obtain your api_key." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [noAPIKeyAlert show];
@@ -51,19 +47,9 @@
     
 }
 
-
-
-
-
-
 -(void)field:(id)fields{
     
-    
     if([fields isKindOfClass:[NSMutableDictionary class]]){
-        
-        
-        
-        
         query = [fields JSONString];
     }else if ([fields isKindOfClass:[NSString class]]){
         query = fields;
@@ -71,31 +57,16 @@
     
 }
 
-
-
-
-
-
-
-
-
-
 -(void)runQuery{
     
     [self runQuery:endPoint];
     
-    
 }
-
-
 
 
 -(void)runQuery:(NSString *)end_Point{
     
-    
     [self fetch:end_Point andParameter:query];
-    
-    
     
 }
 
@@ -112,12 +83,7 @@
     
     [request setHTTPMethod:@"GET"];
     
-    
-    
-    
     qParam = [[OARequestParameter alloc] initWithName:@"q" value:params ];
-    
-    //qParam = [[OARequestParameter alloc] initWithName:@"q" value:@"{\"cat_id\":13658,\"model\":\"Satellite\"}"];
     
     NSArray *paramArray = [NSArray arrayWithObjects:qParam, nil];
     
@@ -126,14 +92,10 @@
     
     fetcher = [[OADataFetcher alloc] init];
     
-    
     [fetcher fetchDataWithRequest:request
                          delegate:self
                 didFinishSelector:@selector(requestDidFinishWithData:)
                   didFailSelector:@selector(requestDidFailWithError:)];
-    
-    
-    
     
 }
 
@@ -141,13 +103,7 @@
     
     queryResult= [[NSString alloc] initWithData:ticket.data
                                        encoding:NSUTF8StringEncoding];
-    
-    
-    
-    
     [self.delegate queryData:queryResult];
-    
-    
 }
 
 
@@ -159,7 +115,6 @@
 -(void)buildQuery:(id)object andKeys:(NSString *)keys{
     [self indexIdentifier:keys];
     NSArray *temp_keyHolder = [keys componentsSeparatedByString:@","];
-    
     
     //setting object with keys as assigned by the user **initial**
     
@@ -227,8 +182,6 @@
                 
             }
             
-            
-            
         }else{
             NSMutableDictionary *temp_Dict = [[NSMutableDictionary alloc] init];
             [temp_Dict setObject:object  forKey:[temp_keyHolder objectAtIndex:temp_keyHolder.count - 1]];
@@ -247,10 +200,7 @@
     }else{
         [queryBuild setObject:object forKey:keys];
     }
-    
-    NSLog(@"query builder output: %@",[queryBuild JSONString]);
     query = [queryBuild JSONString];
-    
 }
 
 

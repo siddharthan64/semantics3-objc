@@ -19,15 +19,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-      semantics3_objc *sem = [[semantics3_objc alloc] initSemantic3Request:OAUTH_KEY withapiSecret:OAUTH_SECRET andEndpoints:@"products"];
-    
-    NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
-    
-    [tempDict setObject:@"4znupRCkN6w2Q4Ke4s6sUC" forKey:@"sem3_id"];
-    [tempDict setObject:@"Satellite" forKey:@"mod"];
-    
+
+    semantics3_objc *sem = [[semantics3_objc alloc] initSemantic3Request:OAUTH_KEY withapiSecret:OAUTH_SECRET andEndpoints:@"products"];
     sem.delegate = self;
-    [sem field:tempDict];
+    [sem buildQuery:@"4992" andKeys:@"cat_id"];
+    [sem buildQuery:@"Toshiba"andKeys:@"brand"];
+    [sem buildQuery:@"1000000" andKeys:@"weight,gte"];
+    [sem buildQuery:@"5000000" andKeys:@"weight,lt"];
+    [sem buildQuery:@"frys.com <http://frys.com>"andKeys:@"sitedetails,name" ];
+    [sem buildQuery:@"USD" andKeys:@"sitedetails,latestoffers,currency"];
+    [sem buildQuery:@"100" andKeys:@"sitedetails,latestoffers,price,gte"];
+    [sem buildQuery:@"dsc" andKeys:@"sort,name"];
+    [sem buildQuery:@"10" andKeys:@"offset"];
+    [sem buildQuery:@"5" andKeys:@"limit"];
+    
     [sem runQuery];
     
 	// Do any additional setup after loading the view, typically from a nib.

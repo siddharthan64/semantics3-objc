@@ -25,7 +25,13 @@
 
 
 #import "OADataFetcher.h"
-
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
 
 @implementation OADataFetcher
 
@@ -33,10 +39,10 @@
 @synthesize delegate;
 
 - (id)init {
-	if ((self = [super init])) {
-		responseData = [[NSMutableData alloc] init];
-	}
-	return self;
+    if ((self = [super init])) {
+        responseData = [[NSMutableData alloc] init];
+    }
+    return self;
 }
 
 //- (void)dealloc {
@@ -49,46 +55,48 @@
 
 /* Protocol for async URL loading */
 - (void)connection:(NSURLConnection *)aConnection didReceiveResponse:(NSURLResponse *)aResponse {
-	//[response release];
-	response = aResponse;
-	[responseData setLength:0];
+    //[response release];
+    response = aResponse;
+    [responseData setLength:0];
 }
 
 - (void)connection:(NSURLConnection *)aConnection didFailWithError:(NSError *)error {
-	OAServiceTicket *ticket = [[OAServiceTicket alloc] initWithRequest:request
-															  response:response
-																  data:responseData
-															didSucceed:NO];
-	[delegate performSelector:didFailSelector withObject:ticket withObject:error];
-	//[ticket release];
+    OAServiceTicket *ticket = [[OAServiceTicket alloc] initWithRequest:request
+                                                              response:response
+                                                                  data:responseData
+                                                            didSucceed:NO];
+    SuppressPerformSelectorLeakWarning(
+                                       [delegate performSelector:didFailSelector withObject:ticket withObject:error];
+                                       );
+    //[ticket release];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	[responseData appendData:data];
+    [responseData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	OAServiceTicket *ticket = [[OAServiceTicket alloc] initWithRequest:request
-															  response:response
-																  data:responseData
-															didSucceed:[(NSHTTPURLResponse *)response statusCode] < 400];
+    OAServiceTicket *ticket = [[OAServiceTicket alloc] initWithRequest:request
+                                                              response:response
+                                                                  data:responseData
+                                                            didSucceed:[(NSHTTPURLResponse *)response statusCode] < 400];
     //NSLog(@"data : %@",[[NSString alloc] initWithData:ticket.data encoding:NSUTF8StringEncoding]);
-    
-	[delegate performSelector:didFinishSelector withObject:ticket withObject:responseData];
-    
+    SuppressPerformSelectorLeakWarning(
+                                       [delegate performSelector:didFinishSelector withObject:ticket withObject:responseData];
+                                       );
 }
 
 - (void)fetchDataWithRequest:(OAMutableURLRequest *)aRequest delegate:(id)aDelegate didFinishSelector:(SEL)finishSelector didFailSelector:(SEL)failSelector {
     //delegate= nil;
-	//[request release];
-	request = aRequest;
+    //[request release];
+    request = aRequest;
     delegate = aDelegate;
     didFinishSelector = finishSelector;
     didFailSelector = failSelector;
     
     [request prepare];
     
-	connection = [[NSURLConnection alloc] initWithRequest:aRequest delegate:self];
+    connection = [[NSURLConnection alloc] initWithRequest:aRequest delegate:self];
 }
 
 @end

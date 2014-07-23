@@ -44,7 +44,7 @@ u_int8_t k_ipad[B + 1]; /* inner padding - key XORd with ipad */
 u_int8_t k_opad[B + 1]; /* outer padding - key XORd with opad */
 
 /* if key is longer than 64 bytes reset it to key=SHA1 (key) */
-unsigned int inKeyLength = inKeyLengthConst;
+unsigned int inKeyLength = (int)inKeyLengthConst;
 if (inKeyLength > B)
 	{
 	SHA1Init(&theSHA1Context);
@@ -72,7 +72,7 @@ for (i = 0; i < B; i++)
 */
 SHA1Init(&theSHA1Context);                 /* init context for 1st pass */
 SHA1Update(&theSHA1Context, k_ipad, B);     /* start with inner pad */
-SHA1Update(&theSHA1Context, (u_int8_t *)inText, inTextLength); /* then text of datagram */
+SHA1Update(&theSHA1Context, (u_int8_t *)inText, (u_int32_t)inTextLength); /* then text of datagram */
 SHA1Final((u_int8_t *)outDigest, &theSHA1Context);                /* finish up 1st pass */
 
 /*
